@@ -1,6 +1,10 @@
 package com.app.NUDO.model;
 
+import java.sql.Date;
+import java.sql.Timestamp;
+
 import javax.persistence.Column;
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -21,6 +25,17 @@ public class Chat {
     
     @Column(name="MESSAGE")
     private String message;
+    
+    @Column(name="Date")
+    private Timestamp date;
+
+	public Timestamp getDate() {
+		return date;
+	}
+
+	public void setDate(Timestamp date) {
+		this.date = date;
+	}
 
 	public Long getId() {
 		return id;
@@ -57,9 +72,10 @@ public class Chat {
 	@Override
 	public String toString() {
 		return "Chat [id=" + id + ", senderId=" + senderId + ", receiverId=" + receiverId + ", message=" + message
-				+ "]";
+				+ ", date=" + date + "]";
 	}
 
+	
 	
 
 }
